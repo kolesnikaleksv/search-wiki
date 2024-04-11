@@ -1,9 +1,10 @@
+import SearchInput from './components/SearchInput';
+
 function App() {
   return (
-    <div className="App">
-      Hello world
+    <div className='App'>
+      <SearchInput/>
     </div>
   );
 }
-
 export default App;
