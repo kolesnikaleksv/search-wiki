@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import axios from 'axios';
 
-export const useSearch = (query) => {
+const useSearch = (query) => {
 
   const [state, setState] = useState({
     articles: [],
@@ -14,6 +14,9 @@ export const useSearch = (query) => {
   useEffect(() => {
 
     if(!query || query.length < 3) {
+      setState({
+        articles: ['Type three or more caracters']
+      })
       return
     }
 
@@ -55,3 +58,5 @@ export const useSearch = (query) => {
 
   return state;
 }
+
+export default useSearch;

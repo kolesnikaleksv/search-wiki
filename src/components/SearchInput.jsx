@@ -1,10 +1,11 @@
 import { Autocomplete, TextField } from '@mui/material';
 import { useState } from 'react';
-import { useSearch } from '../hooks/useSearch';
+import useSearch from '../hooks/useSearch';
+import useDebounce from '../hooks/useDebounce';
 
 export default function SearchInput() {
   const [value, setValue] = useState(null);
-  const {articles} = useSearch(value);
+  const {articles} = useSearch(useDebounce(value));
   
   return (
     <Autocomplete
