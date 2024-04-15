@@ -17,7 +17,7 @@ export default function SearchInput() {
       onInputChange={(event, newInputValue) => {
         setValue(newInputValue);
       }}
-      renderInput={(params) => <TextField {...params} label="Wikipedia" />}
+      renderInput={(params) => <TextField  {...params} label="Wikipedia" />}
     />
   );
 }
