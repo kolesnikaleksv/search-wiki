@@ -19,7 +19,7 @@ const Navigation = () => {
           </li>
           <li>
           <Button variant="contained" size="small">
-            <Link to="/contact">Contact</Link>
+            <Link to="/search">Search</Link>
           </Button>
           </li>
         </ul>

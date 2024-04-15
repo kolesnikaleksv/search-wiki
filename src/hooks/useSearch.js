@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import axios from 'axios';
 
-const useSearch = (query) => {
+const useSearch = (query, limit = 10) => {
 
   const [state, setState] = useState({
     articles: [],
@@ -26,7 +26,7 @@ const useSearch = (query) => {
     
     cancelTocken.current = axios.CancelToken.source();
 
-    axios.get(`https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=${query}`, {
+    axios.get(`https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=${query}&limit=${limit}`, {
       cancelToken: cancelTocken.current.token
     })
     .then(function (response) {
@@ -54,7 +54,7 @@ const useSearch = (query) => {
         })
       }
     });
-  },[query]);
+  },[query, limit]);
 
   return state;
 }
