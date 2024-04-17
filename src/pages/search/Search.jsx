@@ -1,13 +1,13 @@
 import { Container } from "@mui/material";
-import Navigation from "../components/Navigation";
-import useSearch from "../hooks/useSearch";
-import ListItem from "../components/ListItem/ListItem";
+import Navigation from "../../components/Navigation";
+import useSearch from "../../hooks/useSearch";
+import ListItem from "../../components/ListItem/ListItem";
 
 const Search = () => {
   const search = window.location.search;
   const params = new URLSearchParams(search);
   const query = params.get('query');
-  const {articles} = useSearch(query, 50)
+  const {articles} = useSearch(query, 50);
   
   return (
     <div>
@@ -31,7 +31,7 @@ const Search = () => {
                 )
               }             
             })
-            : <h3>There are no articles for {query}</h3>
+            : <h3>There are no articles for: {query}</h3>
           }
         </ul>
       </Container>
