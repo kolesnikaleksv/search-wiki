@@ -1,0 +1,20 @@
+.item {
+  list-style: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid rgba( 0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  width: auto;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  
+  a {
+    display: flex;
+    text-decoration: none;
+    color: green;
+    font-size: 18px;
+  }
+}
+.item:hover {
+  box-shadow: 12px 7px 7px rgba(0, 0, 0, 0.2);
+}

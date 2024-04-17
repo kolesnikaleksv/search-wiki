@@ -8,19 +8,28 @@ const Search = () => {
   const params = new URLSearchParams(search);
   const query = params.get('query');
   const {articles} = useSearch(query, 50)
-
+  
   return (
     <div>
       <Navigation />
       <Container>
         <p>Search query: {query}</p>
-        <ul style={{listStyle: 'none', padding: 0}}>
+        <ul style={{listStyle: 'none', padding: 0, width: 'fit-content'}}>
           {
-            articles.length ?
+            articles.length ? 
             articles.map((article, i) => {
-              return (
-                <ListItem key={i} article={article} />
-              )
+              if(!article.label) {
+                return (
+                  <div>
+                    You didn't do the query. Go to the homePage and write what you are finding.
+                    <a href="/">Go to the Home page</a>
+                  </div>
+                )
+              } else {
+                return (
+                  <ListItem key={i} article={article} />
+                )
+              }             
             })
             : <h3>There are no articles for {query}</h3>
           }
