@@ -1,5 +1,6 @@
 import { Autocomplete, TextField } from '@mui/material';
 
+
 export default function SearchInput({articles, setValue}) {
   return (
     <Autocomplete

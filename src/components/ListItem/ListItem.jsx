@@ -1,6 +1,6 @@
 import "./list-item.scss";
 
-const ListItem = ({ article}) => {
+const ListItem = ({article}) => {
   if (!article) {
     return;
   }
